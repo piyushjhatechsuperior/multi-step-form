@@ -1,0 +1,102 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+h1 {
+  text-align: center;
+  margin: 10px;
+}
+
+body {
+  position: relative;
+}
+form {
+  position: absolute;
+  left: 25%;
+  right: 25%;
+  max-width: 600px;
+  margin: 20px auto;
+  background-color: antiquewhite;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.step.active {
+  display: block;
+}
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.pagination .number {
+  background-color: aqua;
+  padding: 5px 10px;
+  color: white;
+  border-radius: 50%;
+}
+.pagination .bar {
+  background-color: aqua;
+  height: 4px;
+  width: 200px;
+}
+.pagination .active {
+  background-color: blue;
+  color: white;
+}
+
+.step {
+  margin-bottom: 30px;
+  display: none;
+}
+
+.formHeading {
+  font-size: 20px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.formInputs {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.inputs {
+  display: flex;
+  flex-direction: column;
+}
+.inputs label {
+  margin-bottom: 3px;
+}
+.inputs input {
+  padding: 6px;
+  border-radius: 6px;
+  font-size: 10px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+.buttons button {
+  padding: 10px 20px;
+  border-radius: 6px;
+  background-color: aqua;
+  color: black;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.error {
+  color: red;
+}
+
+.output {
+  height: full;
+  width: full;
+  background-color: black;
+  color: yellow;
+}
