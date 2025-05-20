@@ -24,7 +24,7 @@ nextBtn.addEventListener("click", (e) => {
   const fields = steps[curr].querySelectorAll('input, select, textarea');
   let valid = true;
   fields.forEach(fieldValue => {
-    const err = fieldValue.closest('.form-group').querySelector('.error');
+    const err = fieldValue.closest('.formGroup').querySelector('.error');
     if (!fieldValue.value) {
       err.textContent = 'This field is required';
       valid = false;
@@ -53,7 +53,7 @@ function createNewItem(containerId, addBtnId) {
     const removeBtn = document.createElement("button");
     removeBtn.type = "button";
     removeBtn.textContent = "-";
-    removeBtn.className = "remove-item";
+    removeBtn.className = "removeItem";
     removeBtn.addEventListener("click", () => {
       container.removeChild(clone);
     });
@@ -71,8 +71,9 @@ function showResume() {
     skills: [],
     education: [],
     social: {},
-    summary: '',
-    hobbies: ''
+    // summary: '',
+    // hobbies: ''
+    last: {}
   };
 
   data.personal.firstName = document.getElementById('firstName').value;
@@ -113,8 +114,8 @@ function showResume() {
 
   data.social.github = document.getElementById('github').value;
   data.social.linkedin = document.getElementById('linkedin').value;
-  data.summary = document.getElementById('summary').value;
-  data.hobbies = document.getElementById('hobbies').value;
+  data.last.summary = document.getElementById('summary').value;
+  data.last.hobbies = document.getElementById('hobbies').value;
 
   const percentageFields = document.querySelectorAll('input[name="percentage[]"]');
 
@@ -126,7 +127,7 @@ const average = percentagesForAverage.length ? Math.round(total * 100 / percenta
 
 console.log(data);
   let resumeHTML = `
-    <div class="resume-style">
+    <div class="resumeStyle">
       <h2>${data.personal.firstName} ${data.personal.lastName}</h2>
       <p>Email: ${data.personal.email}</p>
       <p>Phone: ${data.personal.phone}</p>
@@ -151,16 +152,27 @@ console.log(data);
       <p>LinkedIn: ${data.social.linkedin}</p>
       <hr />
       <h3>Summary</h3>
-      <p>${data.summary}</p>
+      <p>${data.last.summary}</p>
       <h3>Hobbies</h3>
-      <p>${data.hobbies}</p>
+      <p>${data.last.hobbies}</p>
     </div>
+    <button type="submit" >New Form</button>
   `;
 
+  
+  
+  
   document.getElementById('multiStepForm').style.display = 'none';
   const resumeDiv = document.getElementById('resumeSummary');
   resumeDiv.style.display = 'block';
   resumeDiv.innerHTML = resumeHTML;
+  document.querySelector('button').addEventListener('click', newForm);
 }
 
+function newForm() {
+    curr=0;
+    update;
+    document.getElementById('multiStepForm').style.display = 'block';
+    document.getElementById('resumeSummary').style.display = 'none';
+  }
 update();
