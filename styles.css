@@ -50,7 +50,7 @@ form {
   flex-direction: column;
   gap: 5px;
 }
-.form-group {
+.formGroup {
   display: flex;
   flex-direction: column;
 }
@@ -96,6 +96,7 @@ button {
 }
 #resumeSummary h2 {
   margin-bottom: 10px;
+  color: blue;
 }
 #resumeSummary h3 {
   margin-top: 20px;
